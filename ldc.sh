@@ -6,7 +6,7 @@ else
   DOCKER_COMPOSE="docker-compose"
 fi
 
-compose_files=($(find . -regextype posix-extended -regex "./docker-compose\.([a-zA-Z]+\.)?(yml|yaml)"))
+compose_files=($(find . -regex './docker-compose.*'))
 
 for file in "${compose_files[@]}"; do
   DOCKER_COMPOSE+=" -f $file"
